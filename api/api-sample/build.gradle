@@ -1,0 +1,13 @@
+dependencies {
+    implementation project(':core-web')
+    implementation project(':app-sample')
+    implementation project(':storage-db-main')
+}
+
+bootJar {
+    enabled = true
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

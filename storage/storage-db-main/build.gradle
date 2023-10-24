@@ -1,0 +1,9 @@
+dependencies {
+    implementation project(':app-sample')
+    implementation project(':core-jpa')
+    runtimeOnly 'com.h2database:h2'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

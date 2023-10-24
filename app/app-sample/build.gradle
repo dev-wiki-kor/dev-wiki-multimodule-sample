@@ -1,0 +1,13 @@
+plugins {
+    id 'java-library'
+}
+
+
+dependencies {
+    implementation 'jakarta.transaction:jakarta.transaction-api'
+    api project(':domain-sample')
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

@@ -1,0 +1,36 @@
+rootProject.name = 'Sample'
+include 'api-sample'
+include 'app-sample'
+include 'core-domain', 'core-web', 'core-jpa'
+include 'domain-sample'
+include 'storage-db-main'
+
+rootProject.children.each {
+    if (it.name.startsWith("api")) {
+        it.projectDir = file("api/${it.name}")
+    }
+}
+
+rootProject.children.each {
+    if (it.name.startsWith("app")) {
+        it.projectDir = file("app/${it.name}")
+    }
+}
+
+rootProject.children.each {
+    if (it.name.startsWith('core')) {
+        it.projectDir = file("core/${it.name}")
+    }
+}
+
+rootProject.children.each {
+    if (it.name.startsWith('domain')) {
+        it.projectDir = file("domain/${it.name}")
+    }
+}
+
+rootProject.children.each {
+    if (it.name.startsWith('storage')) {
+        it.projectDir = file("storage/${it.name}")
+    }
+}
